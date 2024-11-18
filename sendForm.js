@@ -1,3 +1,5 @@
+const BASE_URL = "https://test-tg-bot-api.onrender.com/";
+
 const forma = document.querySelector("form");
 // console.log(forma, "forma");
 const email = document.querySelector("input.email");
@@ -16,7 +18,7 @@ forma.addEventListener("submit", async (e) => {
   console.log(values, "values");
 
   try {
-    const response = await fetch("http://localhost:5901/submit", {
+    const response = await fetch(`${BASE_URL}submit`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(values),
